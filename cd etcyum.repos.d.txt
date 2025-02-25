@@ -1,0 +1,14 @@
+cd /etc/yum.repos.d/
+  363  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+  364  sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+  365  yum -y install httpd
+  366  yum update -y
+  367  yum update
+  368  yum install httpd
+  369  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+  370  sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+  371  yum update -y
+  372  ping 8.8.8.8
+
+01204783222
+sed -i 's/#mirrorlist/mirrorlist/g' /etc/yum.repos.d/CentOS-*
